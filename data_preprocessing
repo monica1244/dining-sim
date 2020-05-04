@@ -1,0 +1,84 @@
+import json
+
+import ast
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+business_file = '/kaggle/input/yelp-dataset/yelp_academic_dataset_business.json'
+review_file = '/kaggle/input/yelp-dataset/yelp_academic_dataset_review.json'
+user_file = '/kaggle/input/yelp-dataset/yelp_academic_dataset_user.json'
+tip_file = '/kaggle/input/yelp-dataset/yelp_academic_dataset_tip.json'
+checkin_file = '/kaggle/input/yelp-dataset/yelp_academic_dataset_checkin.json'
+
+# BUSINESS.JSON
+business_data = []
+print('Reading business.json')
+with open(business_file) as f:
+    for line in f:
+        business_data.append(json.loads(line))
+business_df = pd.DataFrame.from_dict(business_data)
+print(business_df.columns.tolist())
+business_sample = business_df.loc[business_df['categories'].str.contains("Restaurants", na=False)]
+
+business_1 = business_sample.loc[(business_df['stars']==1.0)]
+business_2 = business_sample.loc[(business_df['stars']==2.0)]
+business_3 = business_sample.loc[(business_df['stars']==3.0)]
+business_4 = business_sample.loc[(business_df['stars']==4.0)]
+business_5 = business_sample.loc[(business_df['stars']==5.0)]
+# now that sample file is made, get list of business id's from it
+# convert into a dict with values as keys for fast searching
+print('Getting business_ids')
+business_ids_1 = pd.Series(business_1['business_id'].index.values, index=business_1['business_id']).to_dict()
+business_ids_2 = pd.Series(business_2['business_id'].index.values, index=business_2['business_id']).to_dict()
+business_ids_3 = pd.Series(business_3['business_id'].index.values, index=business_3['business_id']).to_dict()
+business_ids_4 = pd.Series(business_4['business_id'].index.values, index=business_4['business_id']).to_dict()
+business_ids_5 = pd.Series(business_5['business_id'].index.values, index=business_5['business_id']).to_dict()
+
+
+
+#REVIEW.JSON
+review_data_1 = []
+review_data_2 = []
+review_data_3 = []
+review_data_4 = []
+review_data_5 = []
+print('Reading review.json') 
+with open(review_file) as f:
+    for line in f:
+        newline = ast.literal_eval(line)  # read the line (str) as a dict
+        if newline['business_id'] in business_ids_1:
+            review_data_1.append(json.loads(line))
+        elif newline['business_id'] in business_ids_2:
+            review_data_2.append(json.loads(line))
+        elif newline['business_id'] in business_ids_3:
+            review_data_3.append(json.loads(line))
+        elif newline['business_id'] in business_ids_4:
+            review_data_4.append(json.loads(line))
+        elif newline['business_id'] in business_ids_5:
+            review_data_5.append(json.loads(line))
+            
+review_df_1 = pd.DataFrame.from_dict(review_data_1)
+review_df_2 = pd.DataFrame.from_dict(review_data_2)
+review_df_3 = pd.DataFrame.from_dict(review_data_3)
+review_df_4 = pd.DataFrame.from_dict(review_data_4)
+review_df_5 = pd.DataFrame.from_dict(review_data_5)
+# get list of business id's from business.json and only keep reviews of those businesses
+# would normally write it with to_json but it's too big to fit in memory, so write it line by line
+
+# now that sample file is made, get list of user id's from it
+# convert into a dict with values as keys for fast searching
+print('Getting user_ids')
+user_ids_1 = pd.Series(review_df_1['user_id'].index.values, index=review_df_1['user_id']).to_dict()
+user_ids_2 = pd.Series(review_df_2['user_id'].index.values, index=review_df_2['user_id']).to_dict()
+user_ids_3 = pd.Series(review_df_3['user_id'].index.values, index=review_df_3['user_id']).to_dict()
+user_ids_4 = pd.Series(review_df_4['user_id'].index.values, index=review_df_4['user_id']).to_dict()
+user_ids_5 = pd.Series(review_df_5['user_id'].index.values, index=review_df_5['user_id']).to_dict()
+
+export_1 = review_df_1['text'].to_csv(index=False)
+export_2 = review_df_2['text'].to_csv(index=False)
+export_3 = review_df_3['text'].to_csv(index=False)
+export_4 = review_df_4['text'].to_csv(index=False)
+export_5 = review_df_5['text'].to_csv(index=False)
