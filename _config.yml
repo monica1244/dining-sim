@@ -1,0 +1,8 @@
+title: Ml-project
+description: " Yelp Recommendation And Review Generator Using Relationship Graphs"
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
