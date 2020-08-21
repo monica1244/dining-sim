@@ -1,6 +1,6 @@
 ## Yelp Recommendation And Review Generator
 #### Course project for CS 7641: Machine Learning (Prof. Mahdi Roozbahani) @ Georgia Institute of Technology
-#### Further implementation details can be found at: https://monica1244.github.io/ml-project/
+#### Further implementation details available at: https://monica1244.github.io/ml-project/
 
 ### The Project
 In this age of the internet and ease of travel, we are spoilt for choice when it comes to picking a restaurant to dine at. If we can take into account the biases of the user as a prior, we would be able to offer a better selection of restaurants to choose from. Additionally, a person usually goes to restaurants with friends who share similar culinary tastes. Incorporating the user's friends' tastes as additional priors will generate even better recommendations.
