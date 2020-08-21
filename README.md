@@ -13,4 +13,4 @@ Kalyani Jagdale @ kalyanijagdale (GitHub)<br>
 Malarvizhi Vasudevan @ malar.v1905@gmail.com<br>
 Monica Gupta @ monica1244 (GitHub)<br>
 Sahith Dambekodi @ SND96 (GitHub)<br>
-Tanvi Bhagwat linkedin.com/in/tanvibhagwat<br>
+Tanvi Bhagwat https://www.linkedin.com/in/tanvibhagwat/<br>
