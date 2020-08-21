@@ -15,3 +15,5 @@ Malarvizhi Vasudevan @ malar.v1905@gmail.com<br>
 Monica Gupta @ https://github.com/monica1244<br>
 Sahith Dambekodi @ https://github.com/SND96<br>
 Tanvi Bhagwat @ https://www.linkedin.com/in/tanvibhagwat/<br>
+
+This repository is a copy of the original project hosted at the private repository: https://github.gatech.edu/mgupta334/ml-project.
