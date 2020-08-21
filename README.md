@@ -9,8 +9,8 @@ We provide a user with a novel and perhaps unusual simulated experience of going
 Through this simulated experience, the user can now decide with greater certainty whether or not to visit a certain restaurant given the probable outcome of going there.
 
 #### Contributors
-Kalyani Jagdale @ kalyanijagdale (GitHub)
-Malarvizhi Vasudevan @ malar.v1905@gmail.com
-Monica Gupta @ monica1244 (GitHub)
-Sahith Dambekodi @ SND96 (GitHub)
-Tanvi Bhagwat linkedin.com/in/tanvibhagwat
+Kalyani Jagdale @ kalyanijagdale (GitHub)<br>
+Malarvizhi Vasudevan @ malar.v1905@gmail.com<br>
+Monica Gupta @ monica1244 (GitHub)<br>
+Sahith Dambekodi @ SND96 (GitHub)<br>
+Tanvi Bhagwat linkedin.com/in/tanvibhagwat<br>
